@@ -20,7 +20,7 @@ public class Registration {
 	public void openApplication() {
 		driver = new FirefoxDriver(); // opens browser
 		driver.get("http://demo.nopcommerce.com/"); // hit URL
-		driver.findElement(By.linkText("Log in")).click(); // clicking on login link
+		 // clicking on login link
 		driver.findElement(By.xpath("//input[@value='Log in']")).click(); // clicking on login button
 		
 		String value=driver.findElement(By.xpath("//span[@for='Email']")).getText(); // getting the error message
