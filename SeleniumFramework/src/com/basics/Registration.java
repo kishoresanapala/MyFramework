@@ -1,5 +1,6 @@
 package com.basics;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,18 +9,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import com.adp.demonop.util.ReadProperties;
+
 public class Registration {
 	WebDriver driver;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Registration ob= new Registration();
 		ob.openApplication();
 		
 	}
 
-	public void openApplication() {
+	public void openApplication() throws IOException {
 		driver = new FirefoxDriver(); // opens browser
-		driver.get("http://demo.nopcommerce.com/"); // hit URL
+		driver.get(ReadProperties.readProp("URL")); // hit URL
 		 // clicking on login link
 		driver.findElement(By.xpath("//input[@value='Log in']")).click(); // clicking on login button
 		
